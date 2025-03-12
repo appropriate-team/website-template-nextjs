@@ -12,7 +12,8 @@ interface UseFetchDataReturn<T> {
   data: T;
   setData: React.Dispatch<React.SetStateAction<T>>;
   loading: boolean;
-  error: string | null;
+  
+  error: string | null; 
 }
 
 const useFetchData = <T>({
