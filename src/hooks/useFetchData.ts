@@ -11,7 +11,9 @@ interface UseFetchDataProps<T> {
 interface UseFetchDataReturn<T> {
   data: T;
   setData: React.Dispatch<React.SetStateAction<T>>;
-  loading: boolean;
+  loading:   boolean;
+
+
 
   error: string | null;
 }
