@@ -17,6 +17,7 @@ interface UseFetchDataReturn<T> {
 
 const useFetchData = <T>({
   fetchFunction,
+
   dependencies = [],
   initialState,
 }: UseFetchDataProps<T>): UseFetchDataReturn<T> => {
