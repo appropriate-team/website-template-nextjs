@@ -11,15 +11,13 @@ interface UseFetchDataProps<T> {
 interface UseFetchDataReturn<T> {
   data: T;
   setData: React.Dispatch<React.SetStateAction<T>>;
-  loading:   boolean;
-
-
-
+  loading: boolean;
   error: string | null;
 }
 
 const useFetchData = <T>({
   fetchFunction,
+
   dependencies = [],
   initialState,
 }: UseFetchDataProps<T>): UseFetchDataReturn<T> => {
@@ -34,7 +32,7 @@ const useFetchData = <T>({
         if (res?.success) {
           setData(res.data);
         } else {
-          setError(res?.message || 'Server Error: Failed to fetch');
+          setError(res?.message ||   'Server Error: Failed to fetch test');
         }
       } catch (err: any) {
         setError(err?.message || 'Unexpected Error');
