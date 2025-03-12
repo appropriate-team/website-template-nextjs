@@ -32,7 +32,7 @@ const useFetchData = <T>({
         if (res?.success) {
           setData(res.data);
         } else {
-          setError(res?.message ||   'Server Error: Failed to fetch test');
+          setError(res?.message || 'Server Error: Failed to fetch test');
         }
       } catch (err: any) {
         setError(err?.message || 'Unexpected Error');

@@ -11,16 +11,6 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx,json}\"",
     "eslint:format": "eslint src --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "echo \"[Husky] commit-msg\"",
-      "pre-push": "echo \"[Husky] pre-push\""
-    }
-  },
-  "lint-staged": {
-    "*": "prettier --write"
-  },
   "dependencies": {
     "next": "15.2.1",
     "react": "^19.0.0",
