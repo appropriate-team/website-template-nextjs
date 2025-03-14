@@ -10,9 +10,7 @@
     "prettier:format": "prettier --write .",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,json}\"",
     "eslint:format": "eslint src --fix",
-    "prepare": "husky",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -28,38 +26,18 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.5",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/eslintrc": "^3",
-    "@storybook/addon-essentials": "^8.6.4",
-    "@storybook/addon-onboarding": "^8.6.4",
-    "@storybook/blocks": "^8.6.4",
-    "@storybook/experimental-addon-test": "^8.6.4",
-    "@storybook/experimental-nextjs-vite": "^8.6.4",
-    "@storybook/nextjs": "^8.6.4",
-    "@storybook/react": "^8.6.4",
-    "@storybook/test": "^8.6.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitest/browser": "^3.0.8",
-    "@vitest/coverage-v8": "^3.0.8",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
-    "eslint-plugin-storybook": "^0.11.4",
     "husky": "^9.1.7",
-    "playwright": "^1.51.0",
     "prettier": "^3.4.2",
-    "storybook": "^8.6.4",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "vitest": "^3.0.8"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "typescript": "^5"
   }
 }
