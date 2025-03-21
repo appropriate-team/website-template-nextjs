@@ -80,12 +80,24 @@ npm run storybook
 
 This will launch Storybook in your browser where you can view and test UI components.
 
-### Generating Components
-
-You can create new components using the following command:
+To build Storybook for production:
 
 ```sh
-npm run generate:component <ComponentName>
+npm run build-storybook
+```
+
+## Generating Components with Plop
+
+Plop is used to generate components quickly with predefined templates. To generate a new component, run:
+
+```sh
+npm run plop
+```
+
+Follow the prompts to create a new component. Alternatively, you can specify a component name directly:
+
+```sh
+npm run plop -- component <ComponentName>
 ```
 
 This will create a new component inside the appropriate directory with necessary files.
