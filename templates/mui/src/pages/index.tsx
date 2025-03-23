@@ -1,19 +1,43 @@
+import { Box, Button, Container, Typography } from '@mui/material';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-8">
-      <div className="max-w-2xl w-full text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Welcome to Your Tailwind App!
-        </h1>
-        <p className="text-lg text-gray-600">
-          This is a clean starter template using Tailwind CSS with Next.js.
-        </p>
-        <div className="mt-6">
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition">
+    <Container
+      maxWidth="md"
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'grey.100',
+        textAlign: 'center',
+        p: 3,
+      }}
+    >
+      <Box>
+        <Typography variant="h2" component="h1" gutterBottom color="grey.800">
+          Welcome to Your MUI App!
+        </Typography>
+        <Typography variant="h6" color="grey.600">
+          This is a clean starter template using MUI with Next.js.
+        </Typography>
+        <Box mt={4}>
+          <Button
+            variant="contained"
+            sx={{
+              px: 3,
+              py: 1.5,
+              backgroundColor: 'primary.main',
+              borderRadius: 2,
+              boxShadow: 1,
+              '&:hover': { backgroundColor: 'primary.dark' },
+              transition: 'all 0.2s',
+            }}
+          >
             Get Started
-          </button>
-        </div>
-      </div>
-    </main>
+          </Button>
+        </Box>
+      </Box>
+    </Container>
   );
 }
