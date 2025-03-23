@@ -1,40 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Next.js CLI Templating Starter
 
-## Getting Started
+A CLI tool to quickly scaffold a Next.js project with a UI framework of your choice. This CLI helps developers speed up the process of setting up a Next.js project with preconfigured UI libraries, Storybook, and Playwright for testing.
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+To install the CLI globally, run:
+
+```sh
+npm link
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Run the following command to create a new Next.js project:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```sh
+npm create-next-ui
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+You will be prompted to select a UI framework from the following options:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+? Select a UI framework:
+  ◉ shadcn/ui
+  ◉ Tailwind CSS only
+  ◉ Material UI
+  ◉ Chakra UI
+```
 
-## Learn More
+Once selected, the corresponding template will be cloned and set up on your system.
 
-To learn more about Next.js, take a look at the following resources:
+## How It Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+1. **User Runs the CLI**  
+   The command `npm create-next-ui` is executed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **UI Framework Selection**  
+   A prompt appears for the user to select a UI framework.
 
-## Deploy on Vercel
+3. **Project Cloning**  
+   Based on the selection, the corresponding Next.js starter template is cloned.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Setup Complete**  
+   The project is ready with the chosen UI framework.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Example
+
+To create a new Next.js project with **Tailwind CSS**, run:
+
+```sh
+npm create-next-ui
+```
+
+Select `Tailwind CSS only` when prompted. This will generate a Next.js project preconfigured with Tailwind.
+
+## Features
+
+- **Fast & Simple** – Quickly set up a Next.js project with your preferred UI framework.
+- **Supports Popular UI Libraries** – Choose from `shadcn/ui`, `Tailwind CSS`, `Material UI`, or `Chakra UI`.
+- **Automated Setup** – The CLI handles cloning and setting up the project.
+- **Storybook Support** – Integrated with Storybook for building UI components in isolation.
+- **Playwright Testing** – Includes Playwright for end-to-end testing.
+- **Component Generation** – Easily generate new components using predefined commands.
+
+## Prerequisites
+
+Ensure you have the following installed:
+
+- **Node.js** (v16 or later recommended)
+- **npm** or **yarn**
+
+## Storybook Setup
+
+Storybook is included for UI component development. To start Storybook, run:
+
+```sh
+npm run storybook
+```
+
+This will launch Storybook in your browser where you can view and test UI components.
+
+To build Storybook for production:
+
+```sh
+npm run build-storybook
+```
+
+## Generating Components with Plop
+
+Plop is used to generate components quickly with predefined templates. To generate a new component, run:
+
+```sh
+npm run plop
+```
+
+Follow the prompts to create a new component. Alternatively, you can specify a component name directly:
+
+```sh
+npm run plop -- component <ComponentName>
+```
+
+This will create a new component inside the appropriate directory with necessary files.
+
+## Playwright Testing
+
+Playwright is used for automated end-to-end testing. To run Playwright tests, use:
+
+```sh
+npx playwright test
+```
+
+To open the Playwright UI after running tests:
+
+```sh
+npx playwright show-report
+```
+
+Playwright ensures your UI behaves correctly across different browsers and environments.
+
+### Writing Tests
+
+To create a new test file for a component, add a file inside the `tests` directory following this pattern:
+
+```sh
+tests/<ComponentName>.spec.ts
+```
+
+Run the test using:
+
+```sh
+npx playwright test tests/<ComponentName>.spec.ts
+```
+
+This will execute tests for the specified component.
