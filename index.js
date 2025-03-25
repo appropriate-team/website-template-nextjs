@@ -44,6 +44,7 @@ const copyDir = (src, dest) => {
         { title: 'Tailwind CSS only', value: 'tailwind' },
         { title: 'Material UI', value: 'mui' },
         { title: 'Chakra UI', value: 'chakra' },
+        { title: 'Daisy UI', value: 'daisyui' },
       ],
     },
   ]);
