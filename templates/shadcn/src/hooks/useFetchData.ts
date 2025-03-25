@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 
-type FetchFunction<T> = () => Promise<{ success: boolean; data: T } | any>;
+type FetchFunction<T> = () => Promise<
+  { success: boolean; data: T } | { success: false; message: string }
+>;
 
 interface UseFetchDataProps<T> {
   fetchFunction: FetchFunction<T>;
-  dependencies?: any[];
+  dependencies?: unknown[];
   initialState?: T;
 }
 
@@ -17,7 +19,6 @@ interface UseFetchDataReturn<T> {
 
 const useFetchData = <T>({
   fetchFunction,
-
   dependencies = [],
   initialState,
 }: UseFetchDataProps<T>): UseFetchDataReturn<T> => {
@@ -29,19 +30,27 @@ const useFetchData = <T>({
     const fetchData = async () => {
       try {
         const res = await fetchFunction();
-        if (res?.success) {
+
+        if ('success' in res && res.success) {
           setData(res.data);
         } else {
-          setError(res?.message || 'Server Error: Failed to fetch');
+          setError(
+            'message' in res ? res.message : 'Server Error: Failed to fetch'
+          );
         }
-      } catch (err: any) {
-        setError(err?.message || 'Unexpected Error');
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError('Unexpected Error');
+        }
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies);
 
   return { data, setData, loading, error };

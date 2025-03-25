@@ -1,9 +1,13 @@
-import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import axios, {
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+  AxiosInstance,
+} from 'axios';
 
-const axiosWithAuth = axios.create();
+const axiosWithAuth: AxiosInstance = axios.create();
 
 // Disable automatic retries (if axios-retry or similar is used)
-(axiosWithAuth.defaults as any).retry = 0;
+(axiosWithAuth.defaults as { retry?: number }).retry = 0;
 
 // Add a request interceptor
 axiosWithAuth.interceptors.request.use(

@@ -57,7 +57,7 @@ Select `Tailwind CSS only` when prompted. This will generate a Next.js project p
 ## Features
 
 - **Fast & Simple** – Quickly set up a Next.js project with your preferred UI framework.
-- **Supports Popular UI Libraries** – Choose from `shadcn/ui`, `Tailwind CSS`, `Material UI`, or `Chakra UI`.
+- **Supports Popular UI Libraries** – Choose from `shadcn/ui`, `Tailwind CSS`, `Material UI`, `Chakra UI`, and `Daisy UI`.
 - **Automated Setup** – The CLI handles cloning and setting up the project.
 - **Storybook Support** – Integrated with Storybook for building UI components in isolation.
 - **Playwright Testing** – Includes Playwright for end-to-end testing.
